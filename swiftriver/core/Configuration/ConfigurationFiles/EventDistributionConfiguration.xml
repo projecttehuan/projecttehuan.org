@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<configuration><eventHandlers><handler name="Tag Clustering" className="\Swiftriver\EventHandlers\TagClusteringEventHandler" filePath="/TagClusteringReactorTurbine/TagClusteringEventHandler.php"/></eventHandlers></configuration>
