@@ -63,7 +63,7 @@ class SiCDSPreProcessingStep implements \Swiftriver\Core\PreProcessing\IPreProce
             if(!key_exists($this->Name(), $config)) {
                 $logger->log("Swiftriver::PreProcessingSteps::SiCDSPreProcessingStep::Process [The SiCDS Pre Processing Step was called but no configuration exists for this module]", \PEAR_LOG_ERR);
                 $logger->log("Swiftriver::PreProcessingSteps::SiCDSPreProcessingStep::Process [Method finished]", \PEAR_LOG_DEBUG);
-                return;
+                return $contentItems;
             }
 
             $config = $config[$this->Name()];
@@ -72,7 +72,7 @@ class SiCDSPreProcessingStep implements \Swiftriver\Core\PreProcessing\IPreProce
                 if(!key_exists($requiredParam->name, $config)) {
                     $logger->log("Swiftriver::PreProcessingSteps::SiCDSPreProcessingStep::Process [The SiCDS Pre Processing Step was called but all the required configuration properties could not be loaded]", \PEAR_LOG_ERR);
                     $logger->log("Swiftriver::PreProcessingSteps::SiCDSPreProcessingStep::Process [Method finished]", \PEAR_LOG_DEBUG);
-                    return;
+                    return $contentItems;
                 }
             }
 

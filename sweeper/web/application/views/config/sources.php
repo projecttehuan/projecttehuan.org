@@ -1,9 +1,9 @@
 <div id="sources">
     <div class="icon"></div>
-    <?php $counter = 1; ?>
+   <?php $counter = 1; ?>
     <?php foreach($channels->channelTypes as $channelType) : ?>
         <h3><a href="javascript:ShowChannel('<?php echo($counter); ?>')"><?php echo($channelType->type); ?></a></h3>
-        <div id="channel-type_<?php echo($counter); ?>" class="channel-container" style="display:none">
+        <div id="channel-type_<?php echo($counter); ?>" class="channel-container <?php echo(strtolower(str_replace(" ", "-", $channelType->type))); ?>" style="display:none">
             <div class="tree">
                 <ul>
                     <?php $innerCounter = 1; ?>
@@ -30,10 +30,26 @@
                                                 <?php foreach($subType->configurationProperties as $key => $properties) : ?>
                                                     <?php if($subType->type == $key) : ?>
                                                         <?php foreach($properties as $property) : ?>
+                                                            <?php if($property->type == "string") { ?>
                                                             <div class="form-row">
                                                                 <label for="<?php echo(str_replace(" ", "", $property->name)); ?>"><?php echo($property->description); ?></label>
                                                                 <input type="text" name="<?php echo(str_replace(" ", "", $property->name)); ?>" class="required" />
                                                             </div>
+                                                            <?php }
+                                                                else if($property->type == "multi_list") {
+                                                                    $items = explode("|", $property->value);
+                                                                    $current_item = 0;
+                                                                    foreach($items as $item) {
+                                                            ?>
+                                                            <div class="form-row clearfix checkbox">
+                                                                <label for="<?php echo($item); ?>"><?php echo($item); ?></label>
+                                                                <input type="checkbox" name="<?php echo(str_replace(" ", "", $property->name)); ?>_<?php echo($current_item); ?>"/>
+                                                            </div>
+                                                            <?php
+                                                                        $current_item ++;
+                                                                    }
+                                                                }
+                                                            ?>
                                                         <?php endforeach; ?>
                                                     <?php endif; ?>
                                                 <?php endforeach; ?>

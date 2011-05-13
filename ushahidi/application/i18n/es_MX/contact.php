@@ -1,23 +1,23 @@
 <?php
 	$lang = array(
 	'captcha' => array(
-		'default' => 'Por favor ingrese un código de seguridad válido',
-		'required' => 'Por favor ingrese el código de seguridad',
+		'default' => 'Please enter a valid security code',
+		'required' => 'Please enter the security code',
 	),
 	'contact_email' => array(
-		'email' => 'El campo email no contiene una dirección vàlida',
-		'length' => 'El campo email debe de ser de un largo de almenos 4 y no mas de 64 caracteres.',
-		'required' => 'El campo email es requerido si esta seleccionada la opcion de Dirección de Email.',
+		'email' => 'The Email field does not appear to contain a valid email address?',
+		'length' => 'The Email field must be at least 4 and no more 64 characters long.',
+		'required' => 'The Email field is required if the checkbox is checked.',
 	),
 	'contact_message' => array(
-		'required' => 'El campo de mensaje es requerido.',
+		'required' => 'The message field is required.',
 	),
 	'contact_name' => array(
-		'length' => 'El campo nombre debe ser de un largo de almenos 3 caracteres.',
-		'required' => 'El campo nombre es requerido.',
+		'length' => 'The name field must be at least 3 characters long.',
+		'required' => 'The name field is required.',
 	),
 	'contact_subject' => array(
-		'length' => 'El campo asunto debe ser de un largo de almenos 3 caracteres.',
-		'required' => 'El campo asunto es requerido.',
+		'length' => 'The subject field must be at least 3 characters long.',
+		'required' => 'The subject field is required.',
 	));
 ?>

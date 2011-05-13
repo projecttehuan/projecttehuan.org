@@ -193,4 +193,12 @@
 					$("#alert_email_yes").attr("checked",false);
 				}
 			});
+
+			// Category treeview
+			$("#category-column-1,#category-column-2").treeview({
+				persist: "location",
+				collapsed: true,
+				unique: false
+			});
+			
 		});

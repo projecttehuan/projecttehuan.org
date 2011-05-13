@@ -160,6 +160,7 @@ include_once(dirname(__FILE__)."/Workflows/ChannelServices/ChannelServicesBase.p
 include_once(dirname(__FILE__)."/Workflows/SourceServices/SourceServicesBase.php");
 include_once(dirname(__FILE__)."/Workflows/PreProcessingSteps/PreProcessingStepsBase.php");
 include_once(dirname(__FILE__)."/Workflows/Analytics/AnalyticsWorkflowBase.php");
+include_once(dirname(__FILE__)."/Workflows/TwitterStreamingServices/TwitterStreamingServicesBase.php");
 include_once(Setup::Configuration()->ModulesDirectory."/SiSPS/Parsers/IParser.php");
 
 //include everything else

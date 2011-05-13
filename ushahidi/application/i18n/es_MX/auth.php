@@ -1,7 +1,7 @@
 <?php
 	$lang = array(
 	'email' => array(
-		'email' => 'El campo email parece no contener una dirección de correo electrónico válida',
+		'email' => 'El campo email parece no contener una dirección de correo electrónico valida?',
 		'exists' => 'Lo siento, ya existe una cuenta de usuario que usa ese correo electrónico.',
 		'length' => 'El campo email debe tener por lo menos 4 y no mas de 64 caracteres.',
 		'required' => 'El campo email es obligatorio.',
@@ -22,7 +22,7 @@
 		'matches' => 'El campo confirmación de la clave debe ser igual al campo clave..',
 	),
 	'resetemail' => array(
-		'email' => 'El campo email parece no contener una dirección de correo electrónico válida',
+		'email' => 'El campo email parece no contener una dirección de correo electrónico valida?',
 		'invalid' => 'Lo siento, no tenemos su dirección de correo electrónico',
 		'required' => 'El campo email es obligatorio.',
 	),

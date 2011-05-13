@@ -19,6 +19,7 @@ class Alerts_Controller extends Main_Controller {
 
     function __construct()
     {
+	$this->themes->validator_enabled = TRUE;
         parent::__construct();
         $this->session = Session::instance();
     }
@@ -120,6 +121,7 @@ class Alerts_Controller extends Main_Controller {
         
         // Javascript Header
         $this->themes->map_enabled = TRUE;
+        $this->themes->treeview_enabled = TRUE;
         $this->themes->js = new View('alerts_js');
         $this->themes->js->default_map = Kohana::config('settings.default_map');
         $this->themes->js->default_zoom = Kohana::config('settings.default_zoom');

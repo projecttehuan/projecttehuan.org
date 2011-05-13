@@ -133,12 +133,12 @@ class UshahidiPassivePushEventHandler implements \Swiftriver\Core\EventDistribut
                         throw new \Exception("The service returned a none json string");
                     }
 
-                    if(!property_exists($json, "success")) {
-                        throw new \Exception("The service returned JSON but it did not contain the property 'success'");
+                    if((!property_exists($json, "error"))) {
+                        throw new \Exception("The service returned JSON but it did not contain the property 'error'");
                     }
 
-                    if($json->success === false) {
-                        throw new \Exception("The service returned a false in the success flag");
+                    if($json->error->code != "0") {
+                        throw new \Exception("The service returned an error: ".$json->error->message);
                     }
                 }
                 catch (\Exception $e) {

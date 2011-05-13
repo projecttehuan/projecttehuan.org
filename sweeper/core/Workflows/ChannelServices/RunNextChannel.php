@@ -109,61 +109,8 @@ class RunNextChannel extends ChannelServicesBase
 
         if(isset($rawContent) && is_array($rawContent) && count($rawContent) > 0)
         {
-
-            $logger->log("Core::Workflows::ChannelServices::RunNextChannel::RunWorkflow [END: Get and parse content]", \PEAR_LOG_DEBUG);
-
-            $logger->log("Core::Workflows::ChannelServices::RunNextChannel::RunWorkflow [START: Running core processing]", \PEAR_LOG_DEBUG);
-
-            try
-            {
-                $preProcessor = new \Swiftriver\Core\PreProcessing\PreProcessor();
-                $processedContent = $preProcessor->PreProcessContent($rawContent);
-            }
-            catch (\Exception $e)
-            {
-                //get the exception message
-                $message = $e->getMessage();
-                $logger->log("Core::Workflows::ChannelServices::RunNextChannel::RunWorkflow [An exception was thrown]", \PEAR_LOG_DEBUG);
-                $logger->log("Core::Workflows::ChannelServices::RunNextChannel::RunWorkflow [$message]", \PEAR_LOG_ERR);
-                $logger->log("Core::Workflows::ChannelServices::RunNextChannel::RunWorkflow [Method finished]", \PEAR_LOG_INFO);
-                return parent::FormatErrorMessage("An exception was thrown: $message");
-            }
-
-            $logger->log("Core::Workflows::ChannelServices::RunNextChannel::RunWorkflow [END: Running core processing]", \PEAR_LOG_DEBUG);
-
-            $logger->log("Core::Workflows::ChannelServices::RunNextChannel::RunWorkflow [START: Save content to the data store]", \PEAR_LOG_DEBUG);
-
-            try
-            {
-                $contentRepository = new \Swiftriver\Core\DAL\Repositories\ContentRepository();
-                $contentRepository->SaveContent($processedContent);
-
-                // Raise the event handler that handles the post processing of content
-
-                $logger->log("Core::Workflows::ChannelServices::RunNextChannel::RunWorkflow [Raise the Ushahidi Push Event Handler]", \PEAR_LOG_DEBUG);
-
-                $event = new \Swiftriver\Core\EventDistribution\GenericEvent(
-                    \Swiftriver\Core\EventDistribution\EventEnumeration::$ContentPostProcessing,
-                    $processedContent);
-
-                $eventDistributor = new \Swiftriver\Core\EventDistribution\EventDistributor();
-
-                $eventDistributor->RaiseAndDistributeEvent($event);
-
-                $logger->log("Core::Workflows::ChannelServices::RunNextChannel::RunWorkflow [End Ushahidi Push event]", \PEAR_LOG_DEBUG);
-
-            }
-            catch (\Exception $e)
-            {
-                //get the exception message
-                $message = $e->getMessage();
-                $logger->log("Core::Workflows::ChannelServices::RunNextChannel::RunWorkflow [An exception was thrown]", \PEAR_LOG_DEBUG);
-                $logger->log("Core::Workflows::ChannelServices::RunNextChannel::RunWorkflow [$message]", \PEAR_LOG_ERR);
-                $logger->log("Core::Workflows::ChannelServices::RunNextChannel::RunWorkflow [Method finished]", \PEAR_LOG_INFO);
-                return parent::FormatErrorMessage("An exception was thrown: $message");
-            }
-
-            $logger->log("Core::Workflows::ChannelServices::RunNextChannel::RunWorkflow [END: Save content to the data store]", \PEAR_LOG_DEBUG);
+            $workflow = new \Swiftriver\Core\Workflows\ContentServices\ProcessContent();
+            $workflow->RunWorkflow($rawContent);
         }
         else
         {

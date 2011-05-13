@@ -56,10 +56,10 @@
 	'select_default_location' => 'Por favor escoja el país predeterminado',
 	'set_location' => 'Seleccione la ubicación exacta en el mapa',
 	'site' => array(
-		'allow_clustering' => 'Agrupar los eventos en el mapa',
-		'allow_comments' => 'Cualquiera puede agregar informacion a los eventos',
+		'allow_clustering' => 'Agrupar los reportes en el mapa',
+		'allow_comments' => 'Cualquiera puede agregar informacion a los reportes',
 		'allow_feed' => 'Incluir noticias?',
-		'allow_reports' => 'Cualquiera puede enviar eventos?',
+		'allow_reports' => 'Cualquiera puede enviar reportes?',
 		'api_akismet' => 'Llave API de Akismet',
 		'default_category_colors' => 'Colores predeterminados para las categorias',
 		'display_contact_page' => 'Mostrar página de contactos',
@@ -83,7 +83,7 @@
 		'twitter_hashtags' => 'Hashtags (Separar con comas)',
 	),
 	'site_email' => array(
-		'email' => 'El campo email del sitio parece no contener una dirección de email válida',
+		'email' => 'El campo email del sitio parece no contener una dirección de email válida?',
 		'length' => 'El campo email del sitio debe tener al menos 4 y no más de 100 caracteres de largo.',
 	),
 	'site_name' => array(

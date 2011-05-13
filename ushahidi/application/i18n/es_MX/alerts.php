@@ -1,18 +1,18 @@
 <?php
 	$lang = array(
 	'alert_email' => array(
-		'email' => 'El campo Email parece no tener una dirección de correo electrónica válida',
+		'email' => 'El campo Email parece no tener una dirección de correo electrónica valida?',
 		'email_check' => 'Ese correo electrónico ya esta registrado para recibir alertas para esa ubicación',
 		'length' => 'El campo Email debe tener entre 4 y 64 caracteres.',
 		'required' => 'El campo Email es obligatorio si el checkbox esta marcado.',
 	),
 	'alert_lat' => array(
-		'between' => 'No ha seleccionado una ubicación válida en el mapa.',
-		'required' => 'No ha seleccionado una ubicación válida en el mapa.',
+		'between' => 'No ha seleccionado una ubicación valida en el mapa.',
+		'required' => 'No ha seleccionado una ubicación valida en el mapa.',
 	),
 	'alert_lon' => array(
-		'between' => 'No ha seleccionado una ubicación válida en el mapa.',
-		'required' => 'No ha seleccionado una ubicación válida en el mapa.',
+		'between' => 'No ha seleccionado una ubicación valida en el mapa.',
+		'required' => 'No ha seleccionado una ubicación valida en el mapa.',
 	),
 	'alert_mobile' => array(
 		'length' => 'El campo Teléfono Móvil parece no contener la correcta cantidad de dígitos.',

@@ -1,10 +1,10 @@
 <?php
 	$lang = array(
 	'organization_description' => array(
-		'required' => 'Por favor ingrese una pequeÃ±a descripción de su organización.',
+		'required' => 'Por favor ingrese una pequeña descripción de su organización.',
 	),
 	'organization_email' => array(
-		'email' => 'El campo email de la organización parece no tener una dirección de email válida',
+		'email' => 'El campo email de la organización parece no tener una dirección de email válida?',
 		'length' => 'El campo email de la organización debe tener al menos 4 y no más de 100 caracteres de largo.',
 	),
 	'organization_name' => array(

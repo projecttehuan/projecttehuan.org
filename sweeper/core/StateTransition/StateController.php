@@ -70,6 +70,16 @@ class StateController
     }
 
     /**
+     * Given a content item, this function marks it as SENT TO USHAHIDI
+     * @param \Swiftriver\Core\ObjectModel\Content $content
+     */
+    public static function MarkContentAsSentToUshahidi($content)
+    {
+        $content->state = "sent_to_ushahidi";
+        return $content;
+    }
+
+    /**
      * Given a string, this function checks if it is a valid reason for
      * marking a content item as inaccurate.
      * 

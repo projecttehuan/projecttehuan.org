@@ -7677,7 +7677,31 @@ class SimplePie_File
 				{
 					$headers2[] = "$key: $value";
 				}
-				if (version_compare(SimplePie_Misc::get_curl_version(), '7.10.5', '>='))
+
+                                /*
+                                 * START: Code added for Swiftriver
+                                 */
+
+                                $proxy = \Swiftriver\Core\Setup::Configuration()->ProxyServer;
+                                $proxyUsername = \Swiftriver\Core\Setup::Configuration()->ProxyServerUserName;
+                                $proxyPassword = \Swiftriver\Core\Setup::Configuration()->ProxyServerPassword;
+
+                                if($proxy != null && $proxy != "")
+                                {
+                                    curl_setopt($fp, CURLOPT_PROXY, $proxy);
+
+                                    if($proxyUsername != null && $proxyUsername != "" && $proxyPassword != null && $proxyPassword != "")
+                                    {
+                                        $auth = \base64_encode($proxyUsername . ":" . $proxyPassword);
+                                        curl_setopt($fp, CURLOPT_PROXYUSERPWD, $auth);
+                                    }
+                                }
+
+                                /*
+                                 * END: Code adde for Swiftriver
+                                 */
+
+                                if (version_compare(SimplePie_Misc::get_curl_version(), '7.10.5', '>='))
 				{
 					curl_setopt($fp, CURLOPT_ENCODING, '');
 				}

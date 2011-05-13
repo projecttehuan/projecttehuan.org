@@ -7,7 +7,7 @@
 	'feedback_date' => 'Fecha',
 	'feedback_details' => 'Detalles',
 	'feedback_message' => array(
-		'required' => 'Por favor ingrese informaciòn para la respuesta.',
+		'required' => 'Please enter some information for the reply.',
 	),
 	'feedback_title' => array(
 		'length' => 'The title field must be at least 3 and no more 100 characters long.',
